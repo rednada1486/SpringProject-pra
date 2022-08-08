@@ -1,0 +1,63 @@
+GET http://localhost:8080/transaction/f249e0cfe26d4d22a8b299ae46018056
+Accept: application/json
+
+###
+GET http://localhost:8080/account?user_id=2
+Accept: application/json
+
+###
+DELETE http://localhost:8080/account
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "accountNumber": "1000000002"
+}
+
+
+###
+### Send POST request with json body
+POST http://localhost:8080/account
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "initialBalance": 1000
+}
+
+
+###
+### Send POST request with json body
+POST http://localhost:8080/transaction/use
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "accountNumber": "1000000000",
+  "amount": 100
+}
+
+###
+### Send POST request with json body
+POST http://localhost:8080/transaction/use
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "accountNumber": "1000000000",
+  "amount": 100
+}
+
+
+
+### Send POST request with json body
+POST http://localhost:8080/transaction/cancel
+Content-Type: application/json
+
+{
+  "transactionId": "f249e0cfe26d4d22a8b299ae46018056",
+  "accountNumber": "1000000000",
+  "amount": 100
+}
+
+

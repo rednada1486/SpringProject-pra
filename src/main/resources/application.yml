@@ -11,6 +11,7 @@ spring:
     console:
       enabled: true
   jpa:
+    # 데이터 초기값 입력 하려면 true해줘야함.. defer 미룬다. 데이터 초기값 입력을 테이블 생성이후로 미룬다.
     defer-datasource-initialization: true
     database-platform: H2
     hibernate:
